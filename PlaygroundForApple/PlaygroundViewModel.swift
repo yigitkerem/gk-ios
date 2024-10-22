@@ -12,9 +12,9 @@ import NIO
 class PlaygroundViewModel: ObservableObject {
     
     let client = Client()
-        .setEndpoint("YOUR_ENDPOINT")
-        .setProject("YOUR_PROJECT_ID")
-        .setSelfSigned()
+        .setEndpoint("https://is.kocfrc.org/v1")
+        .setProject("671674e07507d20cea92")
+        .setSelfSigned(true)
     
     let account: Account
     let storage: Storage
@@ -22,8 +22,8 @@ class PlaygroundViewModel: ObservableObject {
     let functions: Functions
     let realtime: Realtime
     
-    var databaseId = "YOUR_DATABASE_ID"
-    var collectionId = "YOUR_COLLECTION_ID"
+    var databaseId = "gate_tokens"
+    var collectionId = "auth_codes"
     var bucketId = "YOUR_BUCKET_ID"
     var functionId = "YOUR_FUNCTION_ID"
     var executionId = ""
@@ -37,6 +37,7 @@ class PlaygroundViewModel: ObservableObject {
     @Published var message: String = ""
     @Published var downloadedImage: Image? = nil
     @Published var isShowingDialog = false
+    @Published var isSignedIn = false
     @Published var dialogText: String = ""
     
     init() {
@@ -72,10 +73,10 @@ class PlaygroundViewModel: ObservableObject {
         do {
             let user = try await account.get()
             dialogText = String(describing: user.toMap())
+            isSignedIn = true
         } catch {
             dialogText = error.localizedDescription
         }
-        isShowingDialog = true
     }
     
     func createSession() async throws {
@@ -123,6 +124,7 @@ class PlaygroundViewModel: ObservableObject {
             dialogText = error.localizedDescription
         }
         isShowingDialog = true
+        isSignedIn = false
     }
     
     func deleteSession() async throws {
@@ -133,6 +135,7 @@ class PlaygroundViewModel: ObservableObject {
             dialogText = error.localizedDescription
         }
         isShowingDialog = true
+        isSignedIn = false
     }
     
     func subscribe() {
@@ -143,35 +146,26 @@ class PlaygroundViewModel: ObservableObject {
         }
     }
     
-    func createDoc() async throws {
+    func createDoc(code: String) async throws {
         do {
             let doc = try await database.createDocument(
                 databaseId: databaseId,
                 collectionId: collectionId,
                 documentId: ID.unique(),
-                data: ["username": "Apple SwiftUI"],
-                permissions: [
-                    Permission.read(Role.users()),
-                    Permission.update(Role.users()),
-                    Permission.delete(Role.users())
-                ]
+                data: ["code": code]
             )
             documentId = doc.id
             dialogText = String(describing: doc.toMap())
         } catch {
             dialogText = error.localizedDescription
         }
-        isShowingDialog = true
     }
     
     func listDocs() async throws {
         do {
             let docs = try await database.listDocuments(
                 databaseId: databaseId,
-                collectionId: collectionId,
-                queries: [
-                    Query.equal("username", value: "Apple SwiftUI")
-                ]
+                collectionId: collectionId
             )
             dialogText = String(describing: docs.toMap())
         } catch {
@@ -302,6 +296,7 @@ class PlaygroundViewModel: ObservableObject {
         do {
             _ = try await account.createOAuth2Session(provider: provider)
             dialogText = "OAuth Success!"
+            isSignedIn = true
         } catch {
             dialogText = error.localizedDescription
         }

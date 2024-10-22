@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CA0739C2CC71697007C8B65 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 2CA0739B2CC71697007C8B65 /* CodeScanner */; };
+		2CA073A02CC7177C007C8B65 /* SenstivieViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0739F2CC7177C007C8B65 /* SenstivieViewModifier.swift */; };
+		2CA073A22CC71807007C8B65 /* BiometricAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA073A12CC71807007C8B65 /* BiometricAuth.swift */; };
 		C10FB0AE270D72DD00BD9F9D /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = C10FB0AD270D72DD00BD9F9D /* Appwrite */; };
 		C13F48652700644D00301D6D /* PlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F48642700644D00301D6D /* PlaygroundApp.swift */; };
 		C13F48672700644D00301D6D /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F48662700644D00301D6D /* PlaygroundView.swift */; };
@@ -18,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C673B172CC6B81600503FFF /* RWGK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RWGK-Info.plist"; sourceTree = "<group>"; };
+		2CA0739F2CC7177C007C8B65 /* SenstivieViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenstivieViewModifier.swift; sourceTree = "<group>"; };
+		2CA073A12CC71807007C8B65 /* BiometricAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuth.swift; sourceTree = "<group>"; };
 		C13F48612700644D00301D6D /* Playground For Apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Playground For Apple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13F48642700644D00301D6D /* PlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundApp.swift; sourceTree = "<group>"; };
 		C13F48662700644D00301D6D /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
@@ -35,6 +41,7 @@
 			files = (
 				C10FB0AE270D72DD00BD9F9D /* Appwrite in Frameworks */,
 				C1FB29342700755700E6240E /* NetworkExtension.framework in Frameworks */,
+				2CA0739C2CC71697007C8B65 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,7 @@
 		C13F48582700644D00301D6D = {
 			isa = PBXGroup;
 			children = (
+				2C673B172CC6B81600503FFF /* RWGK-Info.plist */,
 				C13F48632700644D00301D6D /* PlaygroundForApple */,
 				C13F48622700644D00301D6D /* Products */,
 				C1FB29322700755700E6240E /* Frameworks */,
@@ -61,6 +69,8 @@
 		C13F48632700644D00301D6D /* PlaygroundForApple */ = {
 			isa = PBXGroup;
 			children = (
+				2CA073A12CC71807007C8B65 /* BiometricAuth.swift */,
+				2CA0739F2CC7177C007C8B65 /* SenstivieViewModifier.swift */,
 				C13F48642700644D00301D6D /* PlaygroundApp.swift */,
 				C13F48662700644D00301D6D /* PlaygroundView.swift */,
 				C13F48682700644D00301D6D /* Assets.xcassets */,
@@ -90,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C13F48602700644D00301D6D /* PlaygroundForApple */ = {
+		C13F48602700644D00301D6D /* RWGK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C13F48852700644E00301D6D /* Build configuration list for PBXNativeTarget "PlaygroundForApple" */;
+			buildConfigurationList = C13F48852700644E00301D6D /* Build configuration list for PBXNativeTarget "RWGK" */;
 			buildPhases = (
 				C13F485D2700644D00301D6D /* Sources */,
 				C13F485E2700644D00301D6D /* Frameworks */,
@@ -102,9 +112,10 @@
 			);
 			dependencies = (
 			);
-			name = PlaygroundForApple;
+			name = RWGK;
 			packageProductDependencies = (
 				C10FB0AD270D72DD00BD9F9D /* Appwrite */,
+				2CA0739B2CC71697007C8B65 /* CodeScanner */,
 			);
 			productName = "playground-for-apple";
 			productReference = C13F48612700644D00301D6D /* Playground For Apple.app */;
@@ -125,7 +136,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C13F485C2700644D00301D6D /* Build configuration list for PBXProject "PlaygroundForApple" */;
+			buildConfigurationList = C13F485C2700644D00301D6D /* Build configuration list for PBXProject "RWGK" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -136,12 +147,13 @@
 			mainGroup = C13F48582700644D00301D6D;
 			packageReferences = (
 				C10FB0AC270D72DD00BD9F9D /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
+				2CA0739A2CC71697007C8B65 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = C13F48622700644D00301D6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C13F48602700644D00301D6D /* PlaygroundForApple */,
+				C13F48602700644D00301D6D /* RWGK */,
 			);
 		};
 /* End PBXProject section */
@@ -163,6 +175,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA073A22CC71807007C8B65 /* BiometricAuth.swift in Sources */,
+				2CA073A02CC7177C007C8B65 /* SenstivieViewModifier.swift in Sources */,
 				C13F48672700644D00301D6D /* PlaygroundView.swift in Sources */,
 				C1E6B5E92700AD1800CE8E05 /* ImagePicker.swift in Sources */,
 				C13F48922700652D00301D6D /* PlaygroundViewModel.swift in Sources */,
@@ -297,9 +311,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlaygroundForApple/Preview Content\"";
-				DEVELOPMENT_TEAM = L834TJ3ANM;
+				DEVELOPMENT_TEAM = 8U8Y87WM4Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RWGK-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = RWGK;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -311,7 +327,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.appwrite.playgroundforswiftui;
+				PRODUCT_BUNDLE_IDENTIFIER = org.rams7729.gkdev;
 				PRODUCT_NAME = "Playground For Apple";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -327,9 +343,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlaygroundForApple/Preview Content\"";
-				DEVELOPMENT_TEAM = L834TJ3ANM;
+				DEVELOPMENT_TEAM = 8U8Y87WM4Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "RWGK-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = RWGK;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -352,7 +370,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C13F485C2700644D00301D6D /* Build configuration list for PBXProject "PlaygroundForApple" */ = {
+		C13F485C2700644D00301D6D /* Build configuration list for PBXProject "RWGK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C13F48832700644E00301D6D /* Debug */,
@@ -361,7 +379,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C13F48852700644E00301D6D /* Build configuration list for PBXNativeTarget "PlaygroundForApple" */ = {
+		C13F48852700644E00301D6D /* Build configuration list for PBXNativeTarget "RWGK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C13F48862700644E00301D6D /* Debug */,
@@ -373,6 +391,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2CA0739A2CC71697007C8B65 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
 		C10FB0AC270D72DD00BD9F9D /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/appwrite/sdk-for-apple";
@@ -384,6 +410,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2CA0739B2CC71697007C8B65 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2CA0739A2CC71697007C8B65 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
 		C10FB0AD270D72DD00BD9F9D /* Appwrite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C10FB0AC270D72DD00BD9F9D /* XCRemoteSwiftPackageReference "sdk-for-apple" */;

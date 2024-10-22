@@ -1,4 +1,5 @@
 {
+  "originHash" : "7e18c625950c91bfdbfee4938b5491e1b6f7574bba4b2b8b570db09a1adb47cd",
   "pins" : [
     {
       "identity" : "async-http-client",
@@ -7,6 +8,15 @@
       "state" : {
         "revision" : "7a4dfe026f6ee0f8ad741b58df74c60af296365d",
         "version" : "1.9.0"
+      }
+    },
+    {
+      "identity" : "codescanner",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/CodeScanner",
+      "state" : {
+        "revision" : "9fa582f4b36c69c2a55bff5fb3377eb170ae273c",
+        "version" : "2.5.1"
       }
     },
     {
@@ -73,5 +83,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
